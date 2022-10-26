@@ -16,6 +16,7 @@ nav ul{
 nav{
     padding-top: 10px;
     padding-bottom: 30px;
+    grid-area: menus;
 }
 main{
     width: 100%;
@@ -34,12 +35,14 @@ main{
     margin: auto;
     display: grid;
   padding-bottom: 30px;
+  grid-area: focim;
 }
 .main1 img{
     height: 100px;
     
 }
 .main1 article{
+    grid-area: tartalom;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     
@@ -82,6 +85,7 @@ main{
     color: white;
     margin: auto
 }
+
 .main2 aside{
     padding-left: 100px;
     padding-top: 60px;
@@ -91,9 +95,15 @@ main{
     border-bottom: 3px solid red;
     
 }
+.main2{
+    grid-area: szoveg;
+}
 .main2 article p{
     padding-top: 30px;
     font-size: 15pt;
+}
+.main2 img{
+    grid-area: kep;
 }
 .body3{
     color: white;
@@ -106,6 +116,7 @@ main{
     margin: auto;
     width: 80%;
     max-width: 1200px;
+    
 
 }
 .main3 h1{
@@ -113,10 +124,12 @@ main{
     font-size: 40pt;
     text-decoration: underline red;
     padding-bottom: 20px;
+    grid-area: salesfocim;
 }
 .main3 p{
     text-align: center;
     padding-bottom: 30px;
+    grid-area: salesszoveg;
 }
 .main3 img{
     height: 150px;
@@ -130,7 +143,16 @@ main{
     grid-template-columns: 25% 25% 25% 25%;
     text-align: center;
 }
-#dobot{
+.doboz1{
+    margin: auto;
+}
+.doboz2{
+    margin: auto;
+}
+.doboz3{
+    margin: auto;
+}
+.doboz4{
     margin: auto;
 }
 .main3 a{
@@ -145,4 +167,158 @@ main{
     width: 250px;
     height: 50px;
     padding-top: 10px;
+}
+
+@media screen and (max-width: 600px) {
+
+    /*
+    1. rész
+    */
+    nav ul{
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 10px;
+    margin-left: 5px;
+    max-width: 50px;
+    }
+    
+    nav li{
+    margin: 10px 0px 10px 10px;
+    text-align: left;
+    font-size: 20pt;
+    }
+    
+    main{
+    text-align: center;
+    display: grid;
+    grid-template-areas: 'menus'
+    'focim'
+    'tartalom';
+    
+    }
+    
+    .main1 h1{
+    font-size: 25pt;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: -75px;
+    }
+    
+    .main1 article{
+    margin: auto;
+    grid-area: tartalom;
+    max-width: 400px;
+    display: grid;
+    margin-left: 50px;
+    grid-template-columns: 1fr;
+    }
+    
+    .main1 section img{
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    }
+    
+    .main1 article section{
+    max-width: 400px;
+     grid-template-columns: 1fr;
+    }
+
+    /*
+    2. rész
+    */
+    
+    .body2{
+    background-color: black;
+    width: 100%;
+    color: white;
+    text-align: center;
+    margin-top: 200px;
+    display: grid;
+    grid-template-areas: 'main2 main2 main2 ';
+    
+    }
+    
+    .main2{
+    margin: auto;
+    max-width: 600px;
+    display: grid;
+    grid-template-areas: 'szoveg'
+    'kep';
+    grid-template-columns: 1fr;
+    }
+    
+    .main2 article{
+    grid-area: szoveg;
+    max-width: 600px;
+    margin-left: 50px;
+    margin-right: 200px;
+    }
+    
+    .main2 article h1{
+    font-family: 'Fredoka One';
+    color: white;
+    font-size: 30pt;
+    margin-top: 50px;
+    margin-left: 25px;
+    width: 400px;
+    text-align: center;
+    letter-spacing: 2px;
+    }
+    
+    .main2 article p{
+    text-align: justify;
+    width: 400px;
+    margin-left: 25px;
+    font-family: 'Varela Round';
+    }
+    
+    .main2 img{
+    grid-area: kep;
+    width: 350px;
+    margin-top: 50px;
+    margin-left: -125px;
+    }
+    
+    /*
+    3. rész
+    */
+    
+    .main3{
+    max-width: 600px;
+    display: grid;
+    grid-template-areas: 'salesfocim'
+    'salesszoveg'
+    'doboz';
+    grid-template-columns: 1fr;
+    }
+    
+    .main3 h1{
+    grid-area: salesfocim;
+    font-family: 'Fredoka One';
+    margin: auto;
+    max-width: 500px;
+    letter-spacing: 3px;
+    text-align: center;
+    border-bottom: 2px solid red;
+    margin-bottom: 10px;
+    margin-left: 80px;
+    }
+    
+    .main3 p{
+    max-width: 450px;
+    grid-area: salesszoveg;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-left: -10px;
+    }
+    .doboz{
+        grid-area: doboz;
+        width: 200px;
+        margin: auto;
+        margin-left: 115px;
+        }
+
 }
